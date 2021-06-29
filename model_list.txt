@@ -1,0 +1,42 @@
+Model simple_sent_2021619164040.pt:
+num_classes = len(sentiment_map.keys())
+vocab_size = len(vocab)
+embed_size = 64
+# Hyperparameters
+EPOCHS = 25 # epoch
+LR = 1.0  # learning rate
+BATCH_SIZE = 64 # batch size for training
+criterion = torch.nn.CrossEntropyLoss().to(device)
+optimizer = torch.optim.SGD(model.parameters(), lr=LR)
+scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.1)
+-----------------------------------------------------------
+| end of epoch  25 | time: 28.35s | valid accuracy    0.571
+-----------------------------------------------------------
+Total Training Time: 13.96mins
+
+
+Model simple_sent_2021619163150.pt: 
+num_classes = len(sentiment_map.keys())
+vocab_size = len(vocab)
+embed_size = 128
+# Hyperparameters
+EPOCHS = 10 # epoch
+LR = 10.0  # learning rate
+BATCH_SIZE = 24 # batch size for training
+-----------------------------------------------------------
+| end of epoch  10 | time: 50.65s | valid accuracy    0.583
+-----------------------------------------------------------
+Total Training Time:  8.44mins
+
+Model simple_sent_2021619162431.pt: 
+num_classes = len(sentiment_map.keys())
+vocab_size = len(vocab)
+embed_size = 128
+# Hyperparameters
+EPOCHS = 10 # epoch
+LR = 5.0  # learning rate
+BATCH_SIZE = 128 # batch size for training
+-----------------------------------------------------------
+| end of epoch  10 | time: 33.48s | valid accuracy    0.585
+-----------------------------------------------------------
+Total Training Time:  4.87mins
